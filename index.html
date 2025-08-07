@@ -123,7 +123,6 @@
                     <h2>write here 👇</h2>
                     <textarea title="write" name="text" class="" oninput="show()" id="areaForText" value=""></textarea>
                     <p class="paratext"> i am para!</p>
-                    <button onclick="show()" title="show the text ">Show</button>
                 </div>
                 <div class="box">
                     <button title="To bold" onclick="boldtext()"><b>Bold</b></button>(❁´◡`❁)
@@ -177,11 +176,10 @@
             }
         }
         function colorChange() {
-            if (peratex.style.color == colorBox.value) {
+            if (peratex.style.color == "white") {
                     peratex.style.color = colorBox.value;
-
             }else{
-              peratex.style.color = "#fff";
+              peratex.style.color = "white";
             }
             
 
