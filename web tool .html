@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+        }
+
+        .contener {
+            max-width: 1600px;
+            margin: auto;
+        }
+
+
+
+        .bolder {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: 100%;
+            gap: 15px;
+            width: 100%;
+            margin: auto;
+        }
+
+        textarea,
+        input {
+            background: linear-gradient(334deg, #5252bbd3, #c113b8e9);
+            border: 1px solid black;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 30px;
+        }
+
+        button {
+            height: 30px;
+            width: 150px;
+            background: linear-gradient(334deg, #fff70094, #00000000);
+            border-radius: 0px 30px 30px;
+            margin: auto;
+        }
+
+        .box:hover {
+            color: white;
+        }
+
+        button:hover {
+            color: white;
+            background: linear-gradient(1000deg, #1c1cbc96, #c113b8e9);
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            width: 600px;
+            height: 500px;
+            border: solid;
+            border-width: 10px;
+            border-color: #ae3aa8e9;
+            border-radius: 0px 30px;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .bodyDiv {
+            height: 100vh;
+            background: linear-gradient(0deg, #1c1cbc96, #c113b8e9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .paratext {
+            color: white;
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            overflow: hidden;
+            font-size: 30px;
+            padding: 20px;
+        }
+
+        .bag {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        h1 {
+            width: 50%;
+            display: flex;
+            padding: 15px;
+            margin: auto;
+            font-family: cursive;
+        }
+
+        .backgroundTheme {
+            background: linear-gradient(180deg, #1c1cbc96, #a4139c);
+            ;
+        }
+    </style>
+</head>
+<body>
+    <div class="bodyDiv">
+        <button onclick="mode()">Mode</button>
+        <div class="main contener">
+            <h1>🏴‍☠️ Web tool 🏴‍☠️</h1>
+            <div class="bag">
+                <div class="textarea">
+                    <h2>write here 👇</h2>
+                    <textarea title="write" name="text" class="" oninput="show()" id="areaForText" value=""></textarea>
+                    <p class="paratext"> i am para!</p>
+                    <button onclick="show()" title="show the text ">Show</button>
+                </div>
+                <div class="box">
+                    <button title="To bold" onclick="boldtext()"><b>Bold</b></button>(❁´◡`❁)
+                    <button title="To Italic" onclick="ItalicText()"><i>Italic</i></button>(●'◡'●)
+                    <button title="To UpperCase" onclick="upperText()">UPPERCASE</button>^_^
+                    <button title="To LowerCase" onclick="lowerText()">lowercase</button>^_~
+                    <button title="To chang text color" onclick="colorChange()"><input type="color" id="input"><br>pick
+                        the Color </button>^_^
+                    <button title="To capital first later" onclick="Capitaliz()">Capitalize Each Word</button>\^o^/
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let text = document.querySelector("textarea");
+        let btn = document.querySelectorAll("button");
+        let colorBox = document.querySelector("#input");
+        let peratex = document.querySelector(".paratext");
+        let divc = document.querySelector(".bodyDiv");
+
+        function mode() {
+            divc.classList.toggle("backgroundTheme");
+        }
+        function show() {
+            if (peratex.innerHTML !== text.value) {
+                peratex.innerHTML = text.value
+            }
+            else if (peratex.innerHTML == text.value) {
+                peratex.innerHTML = "i am pera!"
+            }
+        }
+        function boldtext() {
+            peratex.classList.toggle("bolder");
+        }
+        function ItalicText() {
+              peratex.classList.toggle("bolder");
+            peratex.classList.toggle("italic");
+        }
+        function upperText() {
+            if (peratex.innerHTML == peratex.innerHTML.toUpperCase()) {
+                peratex.innerHTML = text.value
+            } else {
+                peratex.innerHTML = peratex.innerHTML.toUpperCase()
+            }
+        }
+        function lowerText() {
+            if (peratex.innerHTML == peratex.innerHTML.toLowerCase()) {
+                peratex.innerHTML = text.value
+            } else {
+                peratex.innerHTML = peratex.innerHTML.toLowerCase()
+            }
+        }
+        function colorChange() {
+            if (peratex.style.color == colorBox.value) {
+                    peratex.style.color = colorBox.value;
+
+            }else{
+              peratex.style.color = "#fff";
+            }
+            
+
+        }
+        function Capitaliz() { 
+            if ( peratex.style.textTransform == "capitalize") {
+                 peratex.style.textTransform = "unset"
+            }else{
+                peratex.style.textTransform = "capitalize";
+            }
+        }
+    </script>
+</body>
+
+</html>
